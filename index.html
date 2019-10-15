@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Петрович</title>
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .wrapper {
+      margin: auto;
+    }
+
+    form {
+      display: flex;
+      width: 960px;
+      justify-content: space-between;
+    }
+
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    input,
+    select {
+      font-size: 20px;
+      line-height: 1.5;
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-right: 10px;
+    }
+
+    select {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .result {
+      min-height: 69px;
+      margin-top: 60px;
+      text-align: center;
+      font-size: 60px;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <form action="/" method="POST">
+    <div class="row">
+      <label for="gender">Пол</label>
+
+      <select name="gender" id="gender" class="gender">
+        <option value="male" selected>Мужской</option>
+        <option value="female">Женский</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="case">Падеж</label>
+      <select name="case" id="case" class="case">
+        <option value="nominative">Именительный (кто? что?)</option>
+        <option value="genitive">Родительный (кого? чего?)</option>
+        <option value="dative" selected>Дательный (кому? чему?)</option>
+        <option value="accusative">Винительный (кого? что?)</option>
+        <option value="nominative">Творительный (кем? чем?)</option>
+        <option value="prepositional">Предложный (о ком? о чем?)</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="last-name">Фамилия</label>
+      <input id="last-name" class="last-name" type="text" placeholder="Чайковский">
+    </div>
+
+    <div class="row">
+      <label for="first-name">Имя</label>
+      <input id="first-name" class="first-name" type="text" placeholder="Пётр">
+    </div>
+
+    <div class="row">
+      <label for="second-name">Отчество</label>
+      <input id="second-name" class="second-name" type="text" placeholder="Ильич">
+    </div>
+  </form>
+  <div class="result"></div>
+</div>
+<script defer src="./petrovich.min.js" type="text/javascript"></script>
+<script defer src="./app.js"></script>
+</body>
+</html>
