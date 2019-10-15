@@ -6,23 +6,15 @@ const firstNameInput = document.querySelector('.first-name');
 const secondNameInput = document.querySelector('.second-name');
 const resultNode = document.querySelector('.result');
 
-
-/*События*/
 form.addEventListener('submit', event => event.preventDefault());
 form.addEventListener('input', () => {
-  setResult();
-});
-
-function setResult() {
-  let person = {
+  const person = {
     gender: genderInput.value,
-    first: firstNameInput.value || 'Пётр',
+    first: firstNameInput.value,
     middle: secondNameInput.value,
-    last: lastNameInput.value  || 'Чайковский'
+    last: lastNameInput.value
   };
 
   const {gender, first, middle: second, last} = petrovich(person, caseInput.value);
   resultNode.textContent = `${last} ${first} ${second}`;
-}
-
-setResult();
+});
